@@ -14,7 +14,7 @@ def validate_task_description(description):
 
 def validate_due_date(due_date):
     try:
-        datetime.strptime(due_date, "%Y-%m-%d")
+        parsed_date = datetime.strptime(due_date, "%Y-%m-%d")
         return True, due_date
     except ValueError:
         return False, "Invalid date format"
