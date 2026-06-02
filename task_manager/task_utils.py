@@ -11,9 +11,9 @@ from .validation import (
 tasks = []
 
 # Add task
-def add_task(title, descrption, due_date):
+def add_task(title, description, due_date):
     valid_title = validate_task_title(title)
-    valid_desc = validate_task_description(descrption)
+    valid_desc = validate_task_description(description)
     valid_date = validate_due_date(due_date)
 
     
@@ -41,7 +41,7 @@ def view_pending_tasks(tasks=tasks):
 
         if len(pending) == 0:
             print("No pending tasks")
-        return
+            return
 
         for task in pending:
             print(task)
