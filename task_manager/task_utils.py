@@ -20,28 +20,20 @@ def add_task(title, descrption, due_date):
     if not valid_title[0] or not valid_desc[0] or not valid_date[0]:
         return
 
-    
-    if not valid_date[0]:
-        print(valid_date[1])
-        return
-
-    task = {
+    tasks.append({
         "title": valid_title[1],
         "description": valid_desc[1],
         "due_date": valid_date[1],
         "completed": False
-    }
+    })
 
-    tasks.append(task)
     print("Task added successfully!")
 
 #mark task as complete
 def mark_task_as_complete(index, tasks=tasks):
-        if index < 0 or index >= len(tasks):
-            return
-        
-        tasks[index]["completed"] = True
-        print("Task marked as complete!")
+        if index >= 0 and index < len(tasks):
+            tasks[index]["completed"] = True
+            print("Task marked as complete!")
 
 # View pending tasks
 def view_pending_tasks(tasks=tasks):
