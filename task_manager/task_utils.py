@@ -34,6 +34,7 @@ def mark_task_as_complete(index, tasks=tasks):
         if index >= 0 and index < len(tasks):
             tasks[index]["completed"] = True
             print("Task marked as complete!")
+            return
 
 # View pending tasks
 def view_pending_tasks(tasks=tasks):
