@@ -27,16 +27,17 @@ def main():
         elif choice == "2":
             if len(tasks) == 0:
                 print("No tasks available")
-                continue  # 🔴 FIX: stop execution here
+                continue 
 
             for i, task in enumerate(tasks):
                 print(f"{i}. {task['title']} (Completed: {task['completed']})")
 
             try:
                 index = int(input("Enter task index: "))
-                mark_task_as_complete(index)
             except ValueError:
                 print("Invalid input")
+                continue
+            mark_task_as_complete(index)
         
         elif choice == "3":
             view_pending_tasks()
