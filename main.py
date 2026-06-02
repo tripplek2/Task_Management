@@ -34,10 +34,10 @@ def main():
 
             try:
                 index = int(input("Enter task index: "))
+                mark_task_as_complete(index)
             except ValueError:
                 print("Invalid input")
                 continue
-            mark_task_as_complete(index)
         
         elif choice == "3":
             view_pending_tasks()
