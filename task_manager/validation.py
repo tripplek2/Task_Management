@@ -1,21 +1,15 @@
 from datetime import datetime
 
 def validate_task_title(title):
-    title = title.strip()
-
-    if len(title) < 3:
+    if len(title.strip()) < 3:
         raise ValueError("Title too short")
-
-    return title
+    return title.strip()
 
 
 def validate_task_description(description):
-    description = description.strip()
-
-    if len(description) < 5:
+    if len(description.strip()) < 5:
         raise ValueError("Description too short")
-
-    return description
+    return description.strip()
 
 
 def validate_due_date(due_date):
