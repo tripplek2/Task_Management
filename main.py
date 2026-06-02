@@ -24,6 +24,7 @@ def main():
             title = input("Title: ")
             description = input("Description: ")
             due_date = input("Due date (YYYY-MM-DD): ")
+
             add_task(title, description, due_date)
 
         # MARK COMPLETE
@@ -35,13 +36,11 @@ def main():
             for i, task in enumerate(tasks):
                 print(f"{i}. {task['title']} (Completed: {task['completed']})")
 
-            index = input("Enter task index: ")
-
-            if not index.isdigit():
+            try:
+                index = int(input("Enter task index: "))
+                mark_task_as_complete(index)
+            except ValueError:
                 print("Invalid input")
-                continue
-
-            mark_task_as_complete(int(index))
 
         # VIEW PENDING TASKS
         elif choice == "3":

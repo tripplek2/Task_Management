@@ -4,7 +4,7 @@ def validate_task_title(title):
     title = title.strip()
 
     if len(title) < 3:
-        return False, "Title too short"
+        raise ValueError("Title too short")
 
     return True, title
 
@@ -13,7 +13,7 @@ def validate_task_description(description):
     description = description.strip()
 
     if len(description) < 5:
-        return False, "Description too short"
+        raise ValueError("Description too short")
 
     return True, description
 
