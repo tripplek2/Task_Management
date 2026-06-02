@@ -20,7 +20,7 @@ def validate_task_description(description):
 
 def validate_due_date(due_date):
     try:
-        datetime.striptime(due_date,"%Y-%m-%d")
+        datetime.strptime(due_date,"%Y-%m-%d")
         return True, due_date
     except ValueError:
         return False, "Date must be YYYY-MM-DD"
