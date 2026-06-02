@@ -16,9 +16,10 @@ def add_task(title, descrption, due_date):
     valid_desc = validate_task_description(descrption)
     valid_date = validate_due_date(due_date)
 
-    if not valid_title[0]:
-        print(valid_title[1])
+    
+    if not valid_title[0] or not valid_desc[0] or not valid_date[0]:
         return
+
     
     if not valid_date[0]:
         print(valid_date[1])
@@ -37,7 +38,6 @@ def add_task(title, descrption, due_date):
 #mark task as complete
 def mark_task_as_complete(index, tasks=tasks):
         if index < 0 or index >= len(tasks):
-            print("Invalid task index")
             return
         
         tasks[index]["completed"] = True
