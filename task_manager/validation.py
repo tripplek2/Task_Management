@@ -4,7 +4,7 @@ def validate_task_title(title):
     if not isinstance(title, str):
         return False, "Title must be a string"
     
-    if len(title,strip()) < 3:
+    if len(title.strip()) < 3:
         return False, "Title must be atleast 3 characters"
     
     return True, title.strip()
