@@ -7,7 +7,8 @@ def validate_task_title(title):
 
 
 def validate_task_description(description):
-    if len(description.strip()) == 0:
+    if len(description) > 500:
+    # if len(description.strip()) == 0:
         raise ValueError("Description cannot be empty")
     return description.strip()
 
